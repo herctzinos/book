@@ -14,7 +14,7 @@ public class LibraryDTO {
     public LibraryDTO(int bookId, String title, String description, String isbn, String authorFirstName, String authorLastName) {
         this.bookId = bookId;
         this.title = title;
-        this.description = StringUtils.substring(description, 0, 100) + "...";
+        this.description = description.length() > 100 ? StringUtils.substring(description, 0, 100) + "..." : description;
         this.isbn = isbn;
         this.authorFirstName = authorFirstName;
         this.authorLastName = authorLastName;
