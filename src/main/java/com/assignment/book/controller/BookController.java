@@ -27,7 +27,7 @@ public class BookController {
 
     // Create a new book
     @PostMapping("/book")
-    public BookEntity createBook(/*@Valid*/ @RequestBody BookEntity book) {
+    public BookEntity createBook(@Valid @RequestBody BookEntity book) {
 
         return bookRepository.save(book);
     }
@@ -44,15 +44,13 @@ public class BookController {
     // Update a book
     @PutMapping("/book/{id}")
     public BookEntity updateBook(@PathVariable(value = "id") Integer bookId,
-                                  @Valid @RequestBody BookEntity bookData) throws BookNotFoundException {
+                                 @Valid @RequestBody BookEntity bookData) throws BookNotFoundException {
 
         BookEntity book = bookRepository.findById(bookId)
                 .orElseThrow(() -> new BookNotFoundException(bookId));
 
         book.setTitle(bookData.getTitle());
-/*
         book.setAuthorId(bookData.getAuthorId());
-*/
         book.setIsbn(bookData.getIsbn());
 
         return bookRepository.save(book);

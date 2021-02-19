@@ -14,9 +14,9 @@ public class PublisherEntity {
     private String name;
     private String address;
     private String telephone;
-    private Collection<BookEntity> booksById;
 
-    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     public int getId() {
         return id;
@@ -38,7 +38,7 @@ public class PublisherEntity {
     }
 
     @Basic
-    @Column(name = "address",columnDefinition = "default 'empty'")
+    @Column(name = "address", columnDefinition = "default 'empty'")
     public String getAddress() {
         return address;
     }
@@ -48,7 +48,7 @@ public class PublisherEntity {
     }
 
     @Basic
-    @Column(name = "telephone",columnDefinition = "default 'empty'")
+    @Column(name = "telephone", columnDefinition = "default 'empty'")
     public String getTelephone() {
         return telephone;
     }

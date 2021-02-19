@@ -1,10 +1,7 @@
 package com.assignment.book.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.*;
 import java.sql.Date;
 import java.util.Objects;
 
@@ -22,14 +19,9 @@ public class BookEntity {
     private AuthorEntity authorByAuthorId;
 
     @Basic
-/*
-    @NotNull(message = "test minima must not be empty!")
-*/
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "book_id", nullable = false)
+    @Column(name = "book_id")
     public int getBookId() {
         return bookId;
     }
@@ -39,10 +31,8 @@ public class BookEntity {
     }
 
     @Basic
-    @Column(name = "title",nullable = false)
-/*
-    @NotBlank(message = "Title must not be empty!")
-*/
+    @Column(name = "title")
+    @NotNull(message = "Title must not be empty!")
     public String getTitle() {
         return title;
     }
@@ -62,13 +52,9 @@ public class BookEntity {
     }
 
     @Basic
-    @Column(name = "ISBN", nullable = false)
-/*
+    @Column(name = "ISBN")
     @NotNull(message = "ISBN must not be empty!")
-*/
-/*
-    @Digits(integer = 13, fraction = 0)
-*/
+    @Size(min = 13, max = 13, message = "ISBN is exactly 13 digits!")
     public String getIsbn() {
         return isbn;
     }
@@ -79,9 +65,7 @@ public class BookEntity {
 
     @Basic
     @Column(name = "creation_date")
-/*
     @Past
-*/
     public Date getCreationDate() {
         return creationDate;
     }
@@ -121,10 +105,7 @@ public class BookEntity {
 
 
     @ManyToOne
-/*
-    @NotNull(message = "Publisher must not be empty!")
-*/
-    @JoinColumn(name = "publisher_id", referencedColumnName = "id", insertable=false, updatable=false)
+    @JoinColumn(name = "publisher_id", referencedColumnName = "id", insertable = false, updatable = false)
     public PublisherEntity getPublisherByPublisherId() {
         return publisherByPublisherId;
     }
@@ -144,10 +125,7 @@ public class BookEntity {
     }
 
     @ManyToOne
-/*
-    @NotNull(message = "Authoras must not be empty!")
-*/
- @JoinColumn(name = "author_id", referencedColumnName = "id", insertable=false, updatable=false)
+    @JoinColumn(name = "author_id", referencedColumnName = "id", insertable = false, updatable = false)
     public AuthorEntity getAuthorByAuthorId() {
         return authorByAuthorId;
     }

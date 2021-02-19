@@ -36,17 +36,6 @@ public class BookDTO {
         this.publisherAddress = publisherAddress;
     }
 
-    public BookDTO(int bookId, String title, String description, String isbn, java.util.Date creationDate,String authorFirstName) {
-        this.bookId = bookId;
-        this.title = title;
-        this.description = description;
-        this.isbn = isbn;
-        this.creationDate = creationDate;
-        this.authorFirstName = authorFirstName;
-
-    }
-
-
     public int getBookId() {
         return bookId;
     }
