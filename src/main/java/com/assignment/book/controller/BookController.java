@@ -50,6 +50,7 @@ public class BookController {
                 .orElseThrow(() -> new BookNotFoundException(bookId));
 
         book.setTitle(bookData.getTitle());
+        book.setDescription(bookData.getDescription());
         book.setAuthorId(bookData.getAuthorId());
         book.setIsbn(bookData.getIsbn());
         book.setCreationDate(bookData.getCreationDate());

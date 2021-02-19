@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "531b223d-2257-439a-ba07-6ce82e9e9eab",
+		"name": "book endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/api/library",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/library?",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"library"
+					],
+					"query": [
+						{
+							"key": "timeWatched",
+							"value": "3.394146",
+							"disabled": true
+						}
+					]
+				},
+				"description": "List all visible books having a publishing company\r\n(publisher)."
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/book/4",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/book/4?",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book",
+						"4"
+					],
+					"query": [
+						{
+							"key": "timeWatched",
+							"value": "3.394146",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Display a single book"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/author",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"dateOfBirth\":\"16 SEP 1987\",\r\n\t\"firstName\":\"Herc\",\r\n\t    \"lastName\": \"Tzinos\",\r\n\t    \"email\": \"herc@test.com\"\r\n\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/author?",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"author"
+					],
+					"query": [
+						{
+							"key": "timeWatched",
+							"value": "3.394146",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Create a new author"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/publisher/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\":\"Herc Tzinos\",\r\n\t\"address\": \"Marousi\",\r\n\t\"telephone\": \"6976616374\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/publisher/?",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"publisher",
+						""
+					],
+					"query": [
+						{
+							"key": "timeWatched",
+							"value": "3.394146",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Create a new publisher"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/book/4",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"title\":\"Thrones\",\r\n   \"description\":\"Trolls and wizards\",\r\n   \"isbn\":\"1234567890123\",\r\n   \"creationDate\":\"16/09/1987\",\r\n   \"authorId\": 4,\r\n   \"publisherId\":2\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/author?",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"author"
+					],
+					"query": [
+						{
+							"key": "timeWatched",
+							"value": "3.394146",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Display a single book"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/book/7",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"title\":\"LOTR\",\r\n   \"description\":\"Orcs and elves\",\r\n   \"isbn\":\"1234567890125\",\r\n   \"creationDate\":\"12/11/1930\",\r\n   \"authorId\": 4,\r\n   \"publisherId\":2\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/book/7?",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book",
+						"7"
+					],
+					"query": [
+						{
+							"key": "timeWatched",
+							"value": "3.394146",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Update an existing book"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/book/6",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/book/6?",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book",
+						"6"
+					],
+					"query": [
+						{
+							"key": "timeWatched",
+							"value": "3.394146",
+							"disabled": true
+						}
+					]
+				},
+				"description": "Delete an existing book"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
