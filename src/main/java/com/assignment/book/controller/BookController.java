@@ -52,6 +52,9 @@ public class BookController {
         book.setTitle(bookData.getTitle());
         book.setAuthorId(bookData.getAuthorId());
         book.setIsbn(bookData.getIsbn());
+        book.setCreationDate(bookData.getCreationDate());
+        book.setPublisherId(bookData.getPublisherId());
+        book.setAuthorId(bookData.getAuthorId());
 
         return bookRepository.save(book);
     }

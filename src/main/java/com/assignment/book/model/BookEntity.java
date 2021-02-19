@@ -1,8 +1,10 @@
 package com.assignment.book.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
-import java.sql.Date;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -12,7 +14,8 @@ public class BookEntity {
     private String title;
     private String description;
     private String isbn;
-    private Date creationDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", timezone = "EET")
+    private java.util.Date creationDate;
     private int publisherId;
     private int authorId;
     private PublisherEntity publisherByPublisherId;

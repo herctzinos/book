@@ -11,10 +11,10 @@ public class LibraryDTO {
     private String authorFirstName;
     private String authorLastName;
 
-    public LibraryDTO(int bookId, String title, String description, String isbn, String authorFirstName   , String authorLastName) {
+    public LibraryDTO(int bookId, String title, String description, String isbn, String authorFirstName, String authorLastName) {
         this.bookId = bookId;
         this.title = title;
-        this.description = StringUtils.substring(description, 0,100)+"...";
+        this.description = StringUtils.substring(description, 0, 100) + "...";
         this.isbn = isbn;
         this.authorFirstName = authorFirstName;
         this.authorLastName = authorLastName;

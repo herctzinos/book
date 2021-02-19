@@ -1,10 +1,7 @@
 package com.assignment.book.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -73,13 +70,4 @@ public class PublisherEntity {
         return Objects.hash(id, name, address, telephone);
     }
 
-/*    @OneToMany(mappedBy = "publisherByPublisherId")
-    @JsonIgnore
-    public Collection<BookEntity> getBooksById() {
-        return booksById;
-    }
-
-    public void setBooksById(Collection<BookEntity> booksById) {
-        this.booksById = booksById;
-    }*/
 }

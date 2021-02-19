@@ -2,7 +2,8 @@ package com.assignment.book.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import java.sql.Date;
+import java.util.Date;
+
 
 public class BookDTO {
 
@@ -11,11 +12,12 @@ public class BookDTO {
     private String title;
     private String description;
     private String isbn;
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy", timezone="EET")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", timezone = "EET")
     private java.util.Date creationDate;
     private String authorFirstName;
     private String authorLastName;
     private String authorEmail;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd MMMM yyyy", timezone = "EET")
     private java.util.Date authorDOB;
     private String publisherName;
     private String publisherAddress;

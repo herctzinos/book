@@ -6,8 +6,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-import java.sql.Date;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
